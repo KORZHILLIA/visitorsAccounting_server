@@ -15,11 +15,11 @@ const getVisitorById = async (req, res) => {
   res.json({ visitor, message: "Success" });
 };
 
-const addVisitor = async (req, res, next) => {
+const addVisitor = async (req, res) => {
   const { body } = req;
   const visitor = await services.addVisitor(body);
 
-  res.status(201).json({ visitor, message: "Success" });
+  res.status(201).json({ visitor: [visitor], message: "Success" });
 };
 
 const updateVisitor = async (req, res) => {
