@@ -29,7 +29,7 @@ const updateVisitor = async (req, res) => {
   if (!visitor) {
     throw reqErrorMaker(404, `Visitor with id ${visitorId} not found`);
   }
-  res.json({ visitor, message: "Visitor successfully updated" });
+  res.json({ visitor: [visitor], message: "Visitor successfully updated" });
 };
 
 const deleteVisitor = async (req, res) => {
